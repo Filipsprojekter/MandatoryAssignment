@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+<div>
+    <table id="racetable">
+      <tr>
+        <th>Name of Race</th>
+        <th>Driver Name</th>
+        <th>Driver Number</th>
+      </tr>
+      <tr *ngFor ="let race of Races">
+        <td>{{race.raceName}}</td>
+        <td *ngFor="let Result of race.Results">{{Result.Driver.givenName}}</td>
+        <td *ngFor="let Result of race.Results">{{Result.number}}</td>
+      </tr>
+    </table>
+  </div>
+  

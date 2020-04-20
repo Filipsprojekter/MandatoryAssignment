@@ -1,0 +1,37 @@
+<h1>Choose a year to see winners</h1>
+<div class="select">
+  <select
+    #mySelect
+    [(ngModel)]="selectedOption"
+    name="years"
+    id="years"
+    (change)="onOptionSelected(mySelect.value)"
+  >
+    <option value="2010">2010</option>
+    <option value="2011">2011</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+  </select>
+</div>
+<div>
+  <h1>Selected Year : {{ selectedOption }}</h1>
+</div>
+
+<div>
+  <table id="racetable">
+    <tr>
+      <th>Name of Race</th>
+      <th>Driver Name</th>
+      <th>Driver Number</th>
+    </tr>
+    <tr *ngFor="let race of Races">
+      <td>{{ race.raceName }}</td>
+      <td *ngFor="let Result of race.Results">{{ Result.Driver.givenName }}</td>
+      <td *ngFor="let Result of race.Results">{{ Result.number }}</td>
+    </tr>
+  </table>
+</div>
