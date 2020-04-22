@@ -6,10 +6,10 @@ import { map } from "rxjs/operators";
 import { Races } from "./races";
 
 
+
 interface IRacesData {
   MRData: { RaceTable: { Races: Races[] } };
 }
-
 
 @Injectable({
   providedIn: "root",
@@ -47,5 +47,7 @@ export class RaceWinnerService {
     )
     
 
-  }
+  }  
+
+ 
 }
